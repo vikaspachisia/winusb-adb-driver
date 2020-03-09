@@ -16,7 +16,7 @@ pipeline {
   }
   stages {
     stage('Build-Test-Package') {
-      when { changeRequest target: anyof {'master', 'release', 'feature'} }
+      when { changeRequest target: anyof {'master', 'develop', 'release'} }
       matrix {
       agent { label "agent-${PLATFORM}" }
         when { anyof {
